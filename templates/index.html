@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="form-container">
+        <h1 class="form-heading">❤️ Heart Disease Prediction</h1>
+        <p class="description">Please fill in the patient's medical details below to predict heart disease likelihood.</p>
+
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" name="age" placeholder="Enter age in years" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sex">Sex (0 = Female, 1 = Male)</label>
+                <input type="number" name="sex" placeholder="0 or 1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="chest_pain_type">Chest Pain Type (0–3)</label>
+                <input type="number" name="chest_pain_type" placeholder="0 to 3" required>
+            </div>
+
+            <div class="form-group">
+                <label for="resting_bp_s">Resting Blood Pressure (in mm Hg)</label>
+                <input type="number" name="resting_bp_s" placeholder="e.g. 120" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cholesterol">Serum Cholesterol (mg/dl)</label>
+                <input type="number" name="cholesterol" placeholder="e.g. 240" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fasting_blood_sugar">Fasting Blood Sugar > 120 mg/dl (1 = true; 0 = false)</label>
+                <input type="number" name="fasting_blood_sugar" placeholder="0 or 1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="resting_ecg">Resting ECG Result (0–2)</label>
+                <input type="number" name="resting_ecg" placeholder="0 to 2" required>
+            </div>
+
+            <div class="form-group">
+                <label for="max_heart_rate">Maximum Heart Rate Achieved</label>
+                <input type="number" name="max_heart_rate" placeholder="e.g. 150" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exercise_angina">Exercise Induced Angina (1 = Yes, 0 = No)</label>
+                <input type="number" name="exercise_angina" placeholder="0 or 1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="oldpeak">Oldpeak (ST depression induced by exercise)</label>
+                <input type="number" name="oldpeak" step="0.1" placeholder="e.g. 1.4" required>
+            </div>
+
+            <div class="form-group">
+                <label for="st_slope">ST Slope (0 = Upsloping, 1 = Flat, 2 = Downsloping)</label>
+                <input type="number" name="st_slope" placeholder="0 to 2" required>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+            <h2 class="result">{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+
+</body>
+</html>
