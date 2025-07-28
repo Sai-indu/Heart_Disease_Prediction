@@ -1,0 +1,97 @@
+/* FULLSCREEN BACKGROUND WITH GRADIENT OVERLAY */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background: url("/static/images/heart3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+/* FORM CARD */
+.form-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 500px;
+    color: #fff;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    margin: 40px 0;
+}
+
+/* FORM HEADING INSIDE CARD */
+.form-heading {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(to right, #ff416c, #b86adf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* INPUT FIELDS */
+input[type="number"] {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+input[type="number"]::placeholder {
+    color: #eee;
+}
+
+input[type="number"]:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* GRADIENT BUTTON */
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(to right, #ff416c, #b86adf);
+    color: white;
+    box-shadow: 0 4px 14px rgba(255, 65, 108, 0.4);
+    transition: 0.4s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #b86adf, #ff416c);
+    transform: scale(1.03);
+}
+
+/* PREDICTION RESULT TEXT */
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
